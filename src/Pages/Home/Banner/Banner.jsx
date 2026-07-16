@@ -28,7 +28,7 @@ const KeyIllustration = () => (
   </svg>
 );
 
-const Hero = () => {
+const Hero = ({ onRegister }) => {
   const heroRef = useRef(null);
 
   useEffect(() => {
@@ -97,10 +97,8 @@ const Hero = () => {
             </div>
 
             <div className="hero-animate opacity-0 delay-400 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4">
-              <a
-                href="https://api.whatsapp.com/send?phone=50231520285&text=Hola%2C%20quiero%20asistir%20al%20Congreso%20la%20Llave%20de%20David"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={onRegister}
                 className="btn-primary group inline-flex items-center gap-3 focus-ring"
                 tabIndex={0}
               >
@@ -110,7 +108,7 @@ const Hero = () => {
                     <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-              </a>
+              </button>
               <a
                 href="https://www.waze.com/es-419/live-map/directions/iglesia-cfb-7a-calle-9-80-ciudad-san-cristobal,-zona-8,-mixco?to=place.w.176554130.1765606836.4170674"
                 target="_blank"

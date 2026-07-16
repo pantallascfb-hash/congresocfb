@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
-const Registro = () => {
+const Registro = ({ onRegister }) => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -52,21 +52,19 @@ const Registro = () => {
               </p>
 
               <div className="reg-animate opacity-0 pt-2 md:pt-4">
-                <a
-                  href="https://api.whatsapp.com/send?phone=50231520285&text=Hola%2C%20quiero%20asistir%20al%20Congreso%20la%20Llave%20de%20David"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={onRegister}
                   className="btn-primary group inline-flex items-center gap-3 !px-10 md:!px-12 !py-4 md:!py-5 !text-base md:!text-lg"
                 >
                   QUIERO ASISTIR
                   <span className="w-9 h-9 rounded-full bg-black/10 flex items-center justify-center transition-all duration-500 group-hover:translate-x-1 group-hover:scale-105">
                     <ArrowRight size={18} strokeWidth={2} />
                   </span>
-                </a>
+                </button>
               </div>
 
               <p className="reg-animate opacity-0 text-text-muted/50 text-xs">
-                Pronto habilitaremos el formulario de registro
+                Completa el formulario para reservar tu lugar
               </p>
             </div>
           </div>
