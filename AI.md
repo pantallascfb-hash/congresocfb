@@ -110,3 +110,5 @@ index.html                     — Meta tags, LocalWork AI chatbot script
 - Navbar has solid cream bg (`0.97` opacity) on mobile for contrast against content
 - Mobile date badge moved to inline hero text (floating cards clip on mobile)
 - `section-padding`: `py-16 md:py-24 lg:py-32` (was `py-20/32/44`)
+- **DO NOT** add `color: inherit` to `h1-h6` — it overrides Tailwind `text-white`/`text-navy` utilities. Headings inherit from body by default; if a section needs white text, use the Tailwind utility directly.
+- `color: inherit` was the cause of the Destacada white text bug — it was removed, then re-added during the taste-skill rewrite, breaking it again. Always check for this after CSS changes.
