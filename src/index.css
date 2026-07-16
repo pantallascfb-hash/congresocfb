@@ -183,6 +183,16 @@ html {
   50% { transform: translateY(-6px); }
 }
 
+/* Initial state for animated elements — must come BEFORE .animate-* classes so they can override */
+.hero-animate,
+.tema-animate,
+.agenda-animate,
+.dest-animate,
+.ubic-animate,
+.reg-animate {
+  opacity: 0;
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.7s cubic-bezier(0.32, 0.72, 0, 1) forwards;
 }
@@ -202,21 +212,12 @@ html {
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
+.delay-350 { animation-delay: 0.35s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
 .delay-600 { animation-delay: 0.6s; }
 .delay-700 { animation-delay: 0.7s; }
 .delay-800 { animation-delay: 0.8s; }
-
-/* Initial state for animated elements — overridden by .animate-* once observer fires */
-.hero-animate,
-.tema-animate,
-.agenda-animate,
-.dest-animate,
-.ubic-animate,
-.reg-animate {
-  opacity: 0;
-}
 
 .slick-track { display: flex !important; }
 .slick-slide { height: auto !important; display: flex !important; }
