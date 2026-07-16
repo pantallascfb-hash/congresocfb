@@ -170,8 +170,8 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating date — hidden on mobile to prevent clipping */}
-              <div className="absolute -bottom-5 -left-5 double-bezel rounded-2xl px-5 py-3 hidden sm:block animate-fade-in-up delay-700 opacity-0">
+              {/* Floating date — desktop: absolute, mobile: static below card */}
+              <div className="sm:absolute sm:-bottom-5 sm:-left-5 double-bezel rounded-2xl px-4 sm:px-5 py-2.5 sm:py-3 mt-4 sm:mt-0 animate-fade-in-up delay-700 opacity-0">
                 <p className="text-text-muted text-[10px] font-semibold tracking-[0.15em] uppercase">
                   Próximamente
                 </p>
