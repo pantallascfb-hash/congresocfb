@@ -48,7 +48,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
           data: {
             Nombre: form.name,
             Correo: form.email,
-            Telefono: `502${form.phone.replace(/\s/g, "")}`,
+            Telefono: form.phone.replace(/\s/g, ""),
             Mensaje: form.message,
             Fecha: new Date().toLocaleString("es-GT", { timeZone: "America/Guatemala" }),
           },
