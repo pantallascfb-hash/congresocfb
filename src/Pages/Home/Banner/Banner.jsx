@@ -48,11 +48,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={heroRef} className="relative min-h-[100dvh] flex items-center overflow-hidden pt-24 pb-12 md:pt-0 md:pb-0">
+    <div ref={heroRef} className="relative min-h-[100dvh] flex items-center overflow-hidden pt-20 pb-8 md:pt-0 md:pb-0">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center">
           {/* Left */}
-          <div className="lg:col-span-6 space-y-6 md:space-y-8">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6 md:space-y-8">
             <div className="hero-animate opacity-0 delay-100">
               <span className="eyebrow bg-gold/10 text-gold-dark border border-gold/15 inline-flex items-center gap-2">
                 <img src="/logo-cfb.png" alt="CFB" className="h-5 w-auto" />
@@ -61,10 +61,10 @@ const Hero = () => {
             </div>
 
             <div className="hero-animate opacity-0 delay-200">
-              <p className="text-gold-dark text-sm font-bold tracking-[0.25em] uppercase mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              <p className="text-gold-dark text-sm font-bold tracking-[0.25em] uppercase mb-2 md:mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                 Congreso
               </p>
-              <h1 className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-navy leading-[0.88] tracking-[-0.02em]">
+              <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-navy leading-[0.88] tracking-[-0.02em]">
                 LA LLAVE
                 <br />
                 <span className="flex items-baseline gap-3 lg:gap-4">
@@ -77,13 +77,13 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-              <p className="text-navy/20 text-3xl md:text-5xl font-light mt-3 tracking-[-0.01em]" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <p className="text-navy/35 text-3xl md:text-5xl font-light mt-2 md:mt-3 tracking-[-0.01em]" style={{ fontFamily: "'Playfair Display', serif" }}>
                 2026
               </p>
             </div>
 
             <div className="hero-animate opacity-0 delay-300">
-              <p className="text-body-strong text-lg md:text-xl">
+              <p className="text-body-strong text-base md:text-xl">
                 El rebaño del Padre
               </p>
             </div>
@@ -119,7 +119,7 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="hero-animate opacity-0 delay-500 flex flex-wrap items-center gap-5 sm:gap-6 text-sm text-text-muted">
+            <div className="hero-animate opacity-0 delay-500 flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-text-muted">
               <span className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold/60" />
                 2 días de conferencias
