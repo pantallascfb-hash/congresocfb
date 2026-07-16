@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { X, Send, CheckCircle, AlertCircle } from "lucide-react";
 
-const SHEETDB_URL = "https://sheetdb.io/api/v1/jt6pofyzmolri";
+const SHEETDB_URL = "https://sheetdb.io/api/v1/iz1amb4364h0k";
 
 const initialForm = { name: "", email: "", phone: "", message: "" };
 
