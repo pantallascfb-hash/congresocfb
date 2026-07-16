@@ -2,16 +2,14 @@ const Destacada = () => {
   return (
     <div className="py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[2.5rem] overflow-hidden min-h-[420px] md:min-h-[500px] flex items-center justify-center relative">
+        <div className="rounded-[2.5rem] overflow-hidden min-h-[420px] md:min-h-[500px] flex items-center justify-center relative bg-navy">
           {/* Background image */}
-          <div className="absolute inset-0">
-            <img
-              src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=1400&q=80"
-              alt="Rebaño de ovejas al atardecer"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-navy/70" />
-          </div>
+          <img
+            src="https://cdn.pixabay.com/photo/2016/11/29/04/19/sheep-1867484_1280.jpg"
+            alt="Rebaño de ovejas al atardecer"
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-navy/60" />
 
           {/* Content */}
           <div className="relative z-10 text-center px-8 py-24 max-w-3xl mx-auto">
