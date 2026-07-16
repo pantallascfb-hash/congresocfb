@@ -103,6 +103,20 @@ const Hero = () => {
                   </svg>
                 </span>
               </a>
+              <a
+                href="https://www.waze.com/es-419/live-map/directions/iglesia-cfb-7a-calle-9-80-ciudad-san-cristobal,-zona-8,-mixco?to=place.w.176554130.1765606836.4170674"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary group inline-flex items-center gap-3 focus-ring"
+                tabIndex={0}
+              >
+                ¿Cómo llegar?
+                <span className="w-8 h-8 rounded-full bg-navy/8 flex items-center justify-center transition-all duration-500 group-hover:translate-x-1">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+                    <path d="M7 4L13 10L7 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </a>
             </div>
 
             <div className="hero-animate opacity-0 delay-500 flex flex-wrap items-center gap-6 text-sm text-text-muted">
