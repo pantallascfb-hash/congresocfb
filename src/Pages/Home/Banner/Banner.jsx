@@ -88,6 +88,14 @@ const Hero = () => {
               </p>
             </div>
 
+            <div className="hero-animate opacity-0 delay-350">
+              <div className="inline-flex items-center gap-3 rounded-2xl bg-gold/8 border border-gold/12 px-5 py-3">
+                <span className="text-gold-dark text-xl md:text-2xl font-black tracking-tight">28–29 Agosto</span>
+                <span className="w-px h-6 bg-navy/10" />
+                <span className="text-text-muted text-xs md:text-sm font-medium">Viernes y Sábado</span>
+              </div>
+            </div>
+
             <div className="hero-animate opacity-0 delay-400 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4">
               <a
                 href="https://api.whatsapp.com/send?phone=50231520285&text=Hola%2C%20quiero%20asistir%20al%20Congreso%20la%20Llave%20de%20David"
