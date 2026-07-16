@@ -5,9 +5,26 @@ const SHEETDB_URL = "https://sheetdb.io/api/v1/iz1amb4364h0k";
 
 const initialForm = { name: "", email: "", phone: "", message: "" };
 
+const validate = (form) => {
+  const e = {};
+  if (!form.name.trim()) e.name = "Ingresa tu nombre";
+  if (!form.email.trim()) e.email = "Ingresa tu correo";
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Correo no válido";
+  if (!form.phone.trim()) e.phone = "Ingresa tu teléfono";
+  else if (!/^[0-9]{4} ?[0-9]{4}$/.test(form.phone.trim())) e.phone = "Formato: 0000 0000";
+  if (!form.message.trim()) e.message = "Escribe tu mensaje";
+  return e;
+};
+
+const inputBase = "w-full px-4 py-3 rounded-xl bg-surface/60 text-navy text-sm placeholder:text-navy/25 focus:outline-none transition-all";
+const inputOk = "border border-navy/8 focus:border-gold/40 focus:ring-2 focus:ring-gold/15";
+const inputErr = "border border-red-400 focus:border-red-400 focus:ring-2 focus:ring-red-100";
+
 const RegisterModal = ({ isOpen, onClose }) => {
   const [form, setForm] = useState(initialForm);
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const overlayRef = useRef(null);
   const firstInput = useRef(null);
@@ -15,6 +32,10 @@ const RegisterModal = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      setForm(initialForm);
+      setErrors({});
+      setTouched({});
+      setStatus("idle");
       setTimeout(() => firstInput.current?.focus(), 100);
     } else {
       document.body.style.overflow = "";
@@ -24,19 +45,28 @@ const RegisterModal = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     if (!isOpen) return;
-    const handleKey = (e) => {
-      if (e.key === "Escape") onClose();
-    };
+    const handleKey = (e) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [isOpen, onClose]);
 
   const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors((prev) => { const n = { ...prev }; delete n[name]; return n; });
+  };
+
+  const handleBlur = (e) => {
+    setTouched((prev) => ({ ...prev, [e.target.name]: true }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const errs = validate(form);
+    setErrors(errs);
+    setTouched({ name: true, email: true, phone: true, message: true });
+    if (Object.keys(errs).length > 0) return;
+
     setStatus("loading");
     setErrorMsg("");
 
@@ -46,10 +76,10 @@ const RegisterModal = ({ isOpen, onClose }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           data: {
-            Nombre: form.name,
-            Correo: form.email,
+            Nombre: form.name.trim(),
+            Correo: form.email.trim(),
             Telefono: form.phone.replace(/\s/g, ""),
-            Mensaje: form.message,
+            Mensaje: form.message.trim(),
             Fecha: new Date().toLocaleString("es-GT", { timeZone: "America/Guatemala" }),
           },
         }),
@@ -59,17 +89,43 @@ const RegisterModal = ({ isOpen, onClose }) => {
 
       setStatus("success");
       setForm(initialForm);
-      setTimeout(() => {
-        setStatus("idle");
-        onClose();
-      }, 2500);
+      setTouched({});
+      setTimeout(() => { setStatus("idle"); onClose(); }, 2500);
     } catch {
       setStatus("error");
-      setErrorMsg("Hubo un error. Intenta de nuevo o escríbenos por WhatsApp.");
+      setErrorMsg("Hubo un error. Intenta de nuevo.");
     }
   };
 
   if (!isOpen) return null;
+
+  const field = (name, label, Tag, extra = {}) => {
+    const hasErr = touched[name] && errors[name];
+    return (
+      <div>
+        <label htmlFor={`reg-${name}`} className="block text-navy/60 text-xs font-semibold tracking-wide uppercase mb-1.5">
+          {label} *
+        </label>
+        <Tag
+          id={`reg-${name}`}
+          name={name}
+          required
+          value={form[name]}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          className={`${inputBase} ${hasErr ? inputErr : inputOk}`}
+          aria-invalid={hasErr || undefined}
+          aria-describedby={hasErr ? `err-${name}` : undefined}
+          {...extra}
+        />
+        {hasErr && (
+          <p id={`err-${name}`} className="text-red-500 text-xs mt-1 flex items-center gap-1">
+            <AlertCircle size={12} /> {errors[name]}
+          </p>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div
@@ -81,7 +137,6 @@ const RegisterModal = ({ isOpen, onClose }) => {
       aria-label="Formulario de registro"
     >
       <div className="relative w-full max-w-md bg-white rounded-[2rem] shadow-2xl overflow-hidden animate-scale-in">
-        {/* Header */}
         <div className="relative px-6 pt-6 pb-4 border-b border-navy/5">
           <button
             onClick={onClose}
@@ -97,7 +152,6 @@ const RegisterModal = ({ isOpen, onClose }) => {
           <p className="text-text-muted text-sm mt-1">28–29 Agosto 2026</p>
         </div>
 
-        {/* Body */}
         <div className="px-6 py-5">
           {status === "success" ? (
             <div className="py-10 text-center space-y-3">
@@ -107,40 +161,8 @@ const RegisterModal = ({ isOpen, onClose }) => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-              {/* Nombre */}
-              <div>
-                <label htmlFor="reg-name" className="block text-navy/60 text-xs font-semibold tracking-wide uppercase mb-1.5">
-                  Nombre completo *
-                </label>
-                <input
-                  ref={firstInput}
-                  id="reg-name"
-                  name="name"
-                  type="text"
-                  required
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Tu nombre"
-                  className="w-full px-4 py-3 rounded-xl bg-surface/60 border border-navy/8 text-navy text-sm placeholder:text-navy/25 focus:outline-none focus:border-gold/40 focus:ring-2 focus:ring-gold/15 transition-all"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label htmlFor="reg-email" className="block text-navy/60 text-xs font-semibold tracking-wide uppercase mb-1.5">
-                  Correo electrónico *
-                </label>
-                <input
-                  id="reg-email"
-                  name="email"
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="correo@ejemplo.com"
-                  className="w-full px-4 py-3 rounded-xl bg-surface/60 border border-navy/8 text-navy text-sm placeholder:text-navy/25 focus:outline-none focus:border-gold/40 focus:ring-2 focus:ring-gold/15 transition-all"
-                />
-              </div>
+              {field("name", "Nombre completo", "input", { type: "text", placeholder: "Tu nombre", ref: firstInput })}
+              {field("email", "Correo electrónico", "input", { type: "email", placeholder: "correo@ejemplo.com" })}
 
               {/* Teléfono */}
               <div>
@@ -158,29 +180,21 @@ const RegisterModal = ({ isOpen, onClose }) => {
                     required
                     value={form.phone}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     placeholder="0000 0000"
-                    pattern="[0-9]{4} ?[0-9]{4}"
-                    className="w-full px-4 py-3 rounded-r-xl bg-surface/60 border border-navy/8 text-navy text-sm placeholder:text-navy/25 focus:outline-none focus:border-gold/40 focus:ring-2 focus:ring-gold/15 transition-all"
+                    className={`${inputBase} rounded-r-xl ${touched.phone && errors.phone ? inputErr : inputOk}`}
+                    aria-invalid={touched.phone && errors.phone || undefined}
+                    aria-describedby={touched.phone && errors.phone ? "err-phone" : undefined}
                   />
                 </div>
+                {touched.phone && errors.phone && (
+                  <p id="err-phone" className="text-red-500 text-xs mt-1 flex items-center gap-1">
+                    <AlertCircle size={12} /> {errors.phone}
+                  </p>
+                )}
               </div>
 
-              {/* Mensaje */}
-              <div>
-                <label htmlFor="reg-msg" className="block text-navy/60 text-xs font-semibold tracking-wide uppercase mb-1.5">
-                  Mensaje o duda *
-                </label>
-                <textarea
-                  id="reg-msg"
-                  name="message"
-                  required
-                  rows={3}
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Escribe tu pregunta o mensaje..."
-                  className="w-full px-4 py-3 rounded-xl bg-surface/60 border border-navy/8 text-navy text-sm placeholder:text-navy/25 focus:outline-none focus:border-gold/40 focus:ring-2 focus:ring-gold/15 transition-all resize-none"
-                />
-              </div>
+              {field("message", "Mensaje o duda", "textarea", { rows: 3, placeholder: "Escribe tu pregunta o mensaje...", className: `${inputBase} ${touched.message && errors.message ? inputErr : inputOk} resize-none` })}
 
               {status === "error" && (
                 <div className="flex items-center gap-2 text-red-500 text-sm bg-red-50 rounded-xl px-4 py-3">
