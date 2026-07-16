@@ -13,9 +13,7 @@ const Ubicacion = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.querySelectorAll(".ubic-animate").forEach((el, i) => {
-              setTimeout(() => {
-                el.classList.add("animate-fade-in-up");
-              }, i * 120);
+              setTimeout(() => el.classList.add("animate-fade-in-up"), i * 120);
             });
           }
         });
@@ -30,11 +28,11 @@ const Ubicacion = () => {
     <div ref={sectionRef} className="section-padding">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <span className="ubic-animate opacity-0 eyebrow bg-white/5 text-white/40 border border-white/5 inline-flex items-center gap-2 mb-8">
+          <span className="ubic-animate opacity-0 eyebrow bg-navy/5 text-navy/50 border border-navy/8 inline-flex items-center gap-2 mb-8">
             <MapPin size={12} />
             Ubicación
           </span>
-          <h2 className="ubic-animate opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-[-0.03em]">
+          <h2 className="ubic-animate opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-navy tracking-[-0.03em]">
             Encuéntranos
           </h2>
         </div>
@@ -63,15 +61,15 @@ const Ubicacion = () => {
             <div className="double-bezel rounded-[2rem] p-2 h-full">
               <div className="double-bezel-inner rounded-[calc(2rem-0.25rem)] p-8 h-full flex flex-col">
                 <div className="space-y-6 flex-1">
-                  <div className="w-12 h-12 rounded-2xl bg-gold/8 flex items-center justify-center text-gold/60">
+                  <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center text-gold-dark">
                     <MapPin size={20} strokeWidth={1.5} />
                   </div>
 
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    <h3 className="text-navy font-bold text-lg mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
                       Iglesia CFB
                     </h3>
-                    <p className="text-white/35 text-sm leading-relaxed">
+                    <p className="text-text-muted text-sm leading-relaxed">
                       7a Calle 9-80, Ciudad San Cristóbal
                       <br />
                       Zona 8, Mixco
@@ -88,7 +86,6 @@ const Ubicacion = () => {
                     Cómo llegar
                     <ExternalLink size={12} className="opacity-50" />
                   </a>
-
                 </div>
               </div>
             </div>

@@ -10,9 +10,7 @@ const Registro = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.querySelectorAll(".reg-animate").forEach((el, i) => {
-              setTimeout(() => {
-                el.classList.add("animate-fade-in-up");
-              }, i * 120);
+              setTimeout(() => el.classList.add("animate-fade-in-up"), i * 120);
             });
           }
         });
@@ -24,7 +22,7 @@ const Registro = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="section-padding">
+    <div ref={sectionRef} className="section-padding bg-surface/50">
       <div className="max-w-4xl mx-auto text-center">
         <div className="double-bezel rounded-[2.5rem] p-3">
           <div className="double-bezel-inner rounded-[calc(2.5rem-0.375rem)] p-12 md:p-16 lg:p-20 relative overflow-hidden">
@@ -36,20 +34,20 @@ const Registro = () => {
 
             <div className="relative z-10 space-y-8">
               <div className="reg-animate opacity-0">
-                <span className="eyebrow bg-gold/8 text-gold/60 border border-gold/10 inline-flex items-center gap-2">
+                <span className="eyebrow bg-gold/8 text-gold-dark border border-gold/12 inline-flex items-center gap-2">
                   Registro
                 </span>
               </div>
 
-              <h2 className="reg-animate opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-[-0.03em] leading-tight">
+              <h2 className="reg-animate opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-navy tracking-[-0.03em] leading-tight">
                 ¿Listo para
                 <br />
-                <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-gold-dark via-gold to-gold-dark bg-clip-text text-transparent">
                   asistir?
                 </span>
               </h2>
 
-              <p className="reg-animate opacity-0 text-white/35 text-sm md:text-base max-w-md mx-auto leading-relaxed">
+              <p className="reg-animate opacity-0 text-text-muted text-sm md:text-base max-w-md mx-auto leading-relaxed">
                 Reserva tu lugar en el Congreso La Llave de David 2026.
                 No dejes pasar esta oportunidad de encontrarnos con el Padre.
               </p>
@@ -68,7 +66,7 @@ const Registro = () => {
                 </a>
               </div>
 
-              <p className="reg-animate opacity-0 text-white/15 text-xs">
+              <p className="reg-animate opacity-0 text-text-muted/40 text-xs">
                 Pronto habilitaremos el formulario de registro
               </p>
             </div>

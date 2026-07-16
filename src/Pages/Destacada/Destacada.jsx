@@ -9,9 +9,7 @@ const Destacada = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.querySelectorAll(".dest-animate").forEach((el, i) => {
-              setTimeout(() => {
-                el.classList.add("animate-fade-in-up");
-              }, i * 120);
+              setTimeout(() => el.classList.add("animate-fade-in-up"), i * 120);
             });
           }
         });
@@ -35,36 +33,35 @@ const Destacada = () => {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/90 via-navy-deep/80 to-navy-deep/70" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-transparent to-navy-deep/40" />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/70" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-navy/30" />
             </div>
 
             {/* Decorative rings */}
             <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute top-12 left-12 w-36 h-36 border border-gold/5 rounded-full" />
-              <div className="absolute bottom-12 right-12 w-28 h-28 border border-gold/5 rounded-full" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-white/[0.02] rounded-full" />
+              <div className="absolute top-12 left-12 w-36 h-36 border border-gold/10 rounded-full" />
+              <div className="absolute bottom-12 right-12 w-28 h-28 border border-gold/10 rounded-full" />
             </div>
 
             {/* Content */}
             <div className="relative z-10 text-center px-8 py-24 max-w-3xl mx-auto">
               <div className="dest-animate opacity-0 mb-8">
-                <span className="eyebrow bg-white/5 text-white/40 border border-white/5 inline-flex items-center gap-2">
+                <span className="eyebrow bg-gold/15 text-gold-light border border-gold/20 inline-flex items-center gap-2">
                   El rebaño del Padre
                 </span>
               </div>
 
-              <h2 className="dest-animate opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-[-0.03em] mb-8">
+              <h2 className="dest-animate opacity-0 text-3xl sm:text-4xl md:text-5xl font-black text-white leading-[0.95] tracking-[-0.02em] mb-8">
                 DOS DÍAS PARA
                 <br />
-                <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-gold-light via-gold to-gold-light bg-clip-text text-transparent">
                   ENCONTRARNOS CON EL PADRE
                 </span>
               </h2>
 
-              <div className="dest-animate opacity-0 w-12 h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-8" />
+              <div className="dest-animate opacity-0 w-12 h-[2px] bg-gradient-to-r from-transparent via-gold/40 to-transparent mx-auto mb-8" />
 
-              <p className="dest-animate opacity-0 text-white/35 text-sm md:text-base max-w-lg mx-auto leading-relaxed">
+              <p className="dest-animate opacity-0 text-white/60 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
                 Viernes 28 y Sábado 29 de Agosto — Un tiempo de restauración,
                 alabanza y comunión con Dios.
               </p>

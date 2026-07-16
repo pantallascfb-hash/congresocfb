@@ -18,7 +18,7 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -29,13 +29,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-[88px]">
-      <nav className="fixed left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <div className="h-[80px]">
+      <nav className="fixed left-0 w-full z-50 transition-all duration-500">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-3">
           <div
-            className={`flex items-center justify-between rounded-full px-5 py-3 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+            className={`flex items-center justify-between rounded-full px-5 py-2.5 transition-all duration-500 ${
               scrolled
-                ? "glass-nav shadow-2xl shadow-black/30"
+                ? "glass-nav"
                 : "bg-transparent"
             }`}
           >
@@ -45,14 +45,15 @@ const Navbar = () => {
               smooth={true}
               duration={600}
               onSetActive={handleSetActive}
-              className="cursor-pointer flex items-center gap-3"
+              className="cursor-pointer flex items-center gap-3 focus-ring"
+              tabIndex={0}
             >
-              <img src="/logo-cfb.png" alt="CFB" className="h-9 w-auto" />
+              <img src="/logo-cfb.png" alt="Iglesia CFB" className="h-10 w-auto" />
               <div className="hidden sm:flex flex-col leading-none">
-                <span className="text-white font-bold text-sm tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <span className="text-navy font-bold text-base" style={{ fontFamily: "'Playfair Display', serif" }}>
                   CFB
                 </span>
-                <span className="text-gold/70 text-[9px] font-semibold tracking-[0.2em] uppercase">
+                <span className="text-gold text-[10px] font-semibold tracking-[0.2em] uppercase">
                   Congreso 2026
                 </span>
               </div>
@@ -66,14 +67,15 @@ const Navbar = () => {
                   to={path}
                   smooth={true}
                   duration={600}
-                  offset={-88}
+                  offset={-80}
                   spy={true}
                   onSetActive={handleSetActive}
-                  className={`px-4 py-2 rounded-full text-[13px] font-medium transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] cursor-pointer ${
+                  className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer focus-ring ${
                     activeSection === path
-                      ? "bg-gold/10 text-gold"
-                      : "text-white/40 hover:text-white/70"
+                      ? "bg-navy/8 text-navy font-semibold"
+                      : "text-text-muted hover:text-navy hover:bg-navy/5"
                   }`}
+                  tabIndex={0}
                 >
                   {name}
                 </Link>
@@ -86,23 +88,26 @@ const Navbar = () => {
                 href={WA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-xs"
+                className="hidden md:inline-flex btn-primary !py-2.5 !px-6 !text-sm focus-ring"
+                tabIndex={0}
               >
                 Reservar Lugar
               </a>
 
               <button
                 onClick={() => setOpen(!open)}
-                className="lg:hidden w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white transition-all duration-300"
+                className="lg:hidden w-11 h-11 rounded-full bg-navy/5 flex items-center justify-center text-navy/60 hover:text-navy transition-colors focus-ring"
+                aria-label={open ? "Cerrar menú" : "Abrir menú"}
+                tabIndex={0}
               >
-                {open ? <X size={18} /> : <Menu size={18} />}
+                {open ? <X size={20} /> : <Menu size={20} />}
               </button>
             </div>
           </div>
 
           {/* Mobile menu */}
           <div
-            className={`lg:hidden overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+            className={`lg:hidden overflow-hidden transition-all duration-500 ${
               open ? "max-h-[500px] opacity-100 mt-3" : "max-h-0 opacity-0"
             }`}
           >
@@ -111,38 +116,40 @@ const Navbar = () => {
                 {NAV_LINKS.map(({ name, path }, i) => (
                   <li
                     key={path}
-                    className={`transition-all duration-500 ${
-                      open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                    className={`transition-all duration-400 ${
+                      open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                     }`}
-                    style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
+                    style={{ transitionDelay: open ? `${i * 50}ms` : "0ms" }}
                   >
                     <Link
                       to={path}
                       smooth={true}
                       duration={600}
-                      offset={-88}
+                      offset={-80}
                       onSetActive={handleSetActive}
-                      className={`block px-5 py-3 rounded-2xl text-sm font-medium transition-all duration-300 cursor-pointer ${
+                      className={`block px-5 py-3.5 rounded-2xl text-base font-medium transition-all duration-300 cursor-pointer focus-ring ${
                         activeSection === path
-                          ? "bg-gold/10 text-gold"
-                          : "text-white/50 hover:text-white/80 hover:bg-white/5"
+                          ? "bg-navy/8 text-navy font-semibold"
+                          : "text-text-muted hover:text-navy hover:bg-navy/5"
                       }`}
+                      tabIndex={0}
                     >
                       {name}
                     </Link>
                   </li>
                 ))}
                 <li
-                  className={`pt-2 transition-all duration-500 ${
-                    open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                  className={`pt-2 transition-all duration-400 ${
+                    open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                   }`}
-                  style={{ transitionDelay: open ? `${NAV_LINKS.length * 60}ms` : "0ms" }}
+                  style={{ transitionDelay: open ? `${NAV_LINKS.length * 50}ms` : "0ms" }}
                 >
                   <a
                     href={WA_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center btn-primary !rounded-2xl"
+                    className="block text-center btn-primary !rounded-2xl focus-ring"
+                    tabIndex={0}
                   >
                     Reservar Lugar
                   </a>
