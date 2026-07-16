@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Sistema de Facturación e Inventario",
+    "image": "https://i.ibb.co/6kLHbqH/Screenshot-2024-10-25-200015.png",
+    "stack": ["React", "Node.js", "DynamoDB", "Tailwind CSS"],
+    "description": "Sistema completo de facturación y control de inventario para snaptechgt.com. Gestión de productos, clientes, facturación electrónica y reportes en tiempo real.",
+    "liveLink": "https://snaptechgt.com",
+    "github": "https://github.com/nuxcrew/invoice-system",
+    "challenges": "Integración de DynamoDB para escalabilidad horizontal y sincronización de inventario en múltiples sucursales.",
+    "improvements": "Implementación de caché con DynamoDB DAX, generación automática de facturas electrónicas y dashboards en tiempo real."
+  },
+  {
+    "id": 2,
+    "name": "Automation QA Suite",
+    "image": "https://i.ibb.co/KpNgPw7t/Screenshot-2025-06-09-112546.png",
+    "stack": ["Python", "Selenium", "Docker", "Pytest"],
+    "description": "Suite de automatización de pruebas QA para aplicaciones web y APIs. Incluye pruebas de regresión, integración continua con Docker y generación de reportes automáticos.",
+    "liveLink": "https://github.com/nuxcrew/qa-automation-suite",
+    "github": "https://github.com/nuxcrew/qa-automation-suite",
+    "challenges": "Manejo de elementos dinámicos en Selenium, paralelización de pruebas en contenedores Docker y reportes en tiempo real.",
+    "improvements": "Integración con CI/CD, paralelización con pytest-xdist y captura automática de screenshots en fallos."
+  },
+  {
+    "id": 3,
+    "name": "Plataforma de IA para Workflows",
+    "image": "https://i.ibb.co.com/JjLRPvzQ/Screenshot-2025-08-13-214136.png",
+    "stack": ["Python", "OpenAI", "FastAPI", "Docker"],
+    "description": "Plataforma impulsada por IA para automatizar flujos de trabajo empresariales. Procesamiento de lenguaje natural, generación de documentos y orquestación de tareas automatizadas.",
+    "liveLink": "https://github.com/nuxcrew/ai-workflow-platform",
+    "github": "https://github.com/nuxcrew/ai-workflow-platform",
+    "challenges": "Integración con múltiples modelos de IA, manejo de rate limits y orquestación de workflows complejos con dependencias.",
+    "improvements": "Sistema de caché inteligente, cola de trabajos con Redis y monitoreo de rendimiento de modelos."
+  },
+  {
+    "id": 4,
+    "name": "Sistema de Gestión Empresarial",
+    "image": "https://i.ibb.co.com/twpRXStd/Screenshot-2024-10-25-200015.png",
+    "stack": ["Java", "Spring Boot", "Angular", "PostgreSQL"],
+    "description": "ERP modular para gestión empresarial con módulos de RRHH, finanzas, inventario y CRM. Arquitectura de microservicios con Spring Boot y frontend en Angular.",
+    "liveLink": "https://github.com/nuxcrew/erp-system",
+    "github": "https://github.com/nuxcrew/erp-system",
+    "challenges": "Diseño de microservicios con comunicación asíncrona, manejo de transacciones distribuidas y seguridad por roles.",
+    "improvements": "Implementación de API Gateway con Spring Cloud, autenticación JWT y caché distribuida con Redis."
+  }
+]
