@@ -36,7 +36,7 @@ const Navbar = () => {
             className={`flex items-center justify-between rounded-full px-5 py-2.5 transition-all duration-500 ${
               scrolled
                 ? "glass-nav"
-                : "bg-transparent"
+                : "bg-cream/90 border border-navy/5 md:bg-transparent md:border-transparent"
             }`}
           >
             {/* Logo */}
@@ -111,7 +111,7 @@ const Navbar = () => {
               open ? "max-h-[500px] opacity-100 mt-3" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="glass-nav rounded-3xl p-5">
+            <div className="rounded-3xl p-5" style={{ background: "rgba(253, 251, 247, 0.97)", backdropFilter: "blur(24px)", border: "1px solid rgba(11, 47, 106, 0.08)", boxShadow: "0 8px 32px rgba(11, 47, 106, 0.1)" }}>
               <ul className="space-y-1">
                 {NAV_LINKS.map(({ name, path }, i) => (
                   <li
@@ -127,10 +127,10 @@ const Navbar = () => {
                       duration={600}
                       offset={-80}
                       onSetActive={handleSetActive}
-                      className={`block px-5 py-3.5 rounded-2xl text-base font-medium transition-all duration-300 cursor-pointer focus-ring ${
+                      className={`block px-5 py-3.5 rounded-2xl text-base font-semibold transition-all duration-300 cursor-pointer focus-ring ${
                         activeSection === path
-                          ? "bg-navy/8 text-navy font-semibold"
-                          : "text-text-muted hover:text-navy hover:bg-navy/5"
+                          ? "bg-navy/10 text-navy"
+                          : "text-navy/70 hover:text-navy hover:bg-navy/5"
                       }`}
                       tabIndex={0}
                     >

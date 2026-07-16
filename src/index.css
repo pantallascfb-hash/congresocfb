@@ -73,7 +73,7 @@ html {
 
 @layer components {
   .section-padding {
-    @apply py-20 md:py-28 lg:py-36;
+    @apply py-14 md:py-28 lg:py-36;
   }
 
   .double-bezel {

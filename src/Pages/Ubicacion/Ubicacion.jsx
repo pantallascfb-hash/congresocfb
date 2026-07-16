@@ -40,7 +40,7 @@ const Ubicacion = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Map */}
           <div className="lg:col-span-2 ubic-animate opacity-0">
-            <div className="double-bezel rounded-[2rem] p-2 h-[400px]">
+            <div className="double-bezel rounded-[2rem] p-2 h-[300px] md:h-[400px]">
               <div className="double-bezel-inner rounded-[calc(2rem-0.25rem)] overflow-hidden h-full">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.2!2d-90.6349!3d14.4874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a47d0e5d5e5d%3A0x7e5fdedd5b13e74f!2sComunidades%20de%20Formaci%C3%B3n%20B%C3%ADblica!5e0!3m2!1ses!2sgt!4v1700000000000"
