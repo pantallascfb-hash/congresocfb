@@ -163,14 +163,7 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-center">
-                    <p className="text-navy/40 text-xs tracking-[0.3em] uppercase">
-                      El rebaño del Padre
-                    </p>
-                    <p className="text-navy/20 text-[10px] tracking-widest mt-1">
-                      Lucas 12:32
-                    </p>
-                  </div>
+
                 </div>
               </div>
 

@@ -52,7 +52,7 @@ src/
   Routes/Routes.jsx            — Single route → Home
   Layout/MainLayout/Main.jsx   — Root layout, noise overlay, scroll-to-top
   Components/
-    AnimatedBackground.jsx     — GSAP particles, mouse trail, ambient glows
+    AnimatedBackground.jsx     — Gold/navy particles, ambient glows
     Header/Navbar.jsx          — Floating glass pill nav, mobile menu
     Footer/Footer.jsx          — Dark navy footer
   Pages/
@@ -93,10 +93,11 @@ index.html                     — Meta tags, LocalWork AI chatbot script
 - [x] Footer (dark navy contrast section)
 - [x] Floating nav with mobile menu
 - [x] Scroll-to-top button
-- [x] Animated background (particles, mouse trail)
+- [x] Animated background (particles, ambient glows — no mouse trail)
 - [x] `prefers-reduced-motion` support
 - [x] `focus-ring` accessibility utility
 - [x] LocalWork AI chatbot in index.html
+- [x] Taste-skill editorial luxury pass (all sections responsive)
 - [x] Build passes, pushed to GitHub
 
 ## Notes
@@ -105,3 +106,7 @@ index.html                     — Meta tags, LocalWork AI chatbot script
 - Global `h1-h6` uses `color: inherit` (not hardcoded navy) so Tailwind classes like `text-white` work in the footer
 - The `Destacada` section intentionally uses a dark navy overlay with white text for contrast
 - `focus-ring` is defined as a `@utility` (not a plain CSS class) for Tailwind v4 `@apply` compatibility
+- `AnimatedBackground` uses only particles + ambient glows — z-9999 mouse trail was removed
+- Navbar has solid cream bg (`0.97` opacity) on mobile for contrast against content
+- Mobile date badge moved to inline hero text (floating cards clip on mobile)
+- `section-padding`: `py-16 md:py-24 lg:py-32` (was `py-20/32/44`)
