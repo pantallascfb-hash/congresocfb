@@ -17,7 +17,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
-  color: #0B2F6A;
+  color: inherit;
   text-wrap: balance;
   line-height: 1.1;
 }
@@ -208,10 +208,13 @@ html {
 .delay-700 { animation-delay: 0.7s; }
 .delay-800 { animation-delay: 0.8s; }
 
-.animate-fade-in-up,
-.animate-fade-in-left,
-.animate-fade-in-right,
-.animate-scale-in {
+/* Initial state for animated elements — overridden by .animate-* once observer fires */
+.hero-animate,
+.tema-animate,
+.agenda-animate,
+.dest-animate,
+.ubic-animate,
+.reg-animate {
   opacity: 0;
 }
 

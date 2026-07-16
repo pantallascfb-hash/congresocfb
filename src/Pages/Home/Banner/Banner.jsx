@@ -123,14 +123,14 @@ const Hero = () => {
               <div className="double-bezel rounded-[2rem] p-2">
                 <div className="double-bezel-inner rounded-[calc(2rem-0.25rem)] aspect-[4/5] relative overflow-hidden bg-cream-warm">
                   {/* Sheep image */}
-                  <div className="absolute inset-0 opacity-25">
+                  <div className="absolute inset-0">
                     <img
                       src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800&q=80"
                       alt="Ovejas en pradera al atardecer"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-cream/20 to-cream/60" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-cream-warm/30 via-transparent to-cream-warm/50" />
                   </div>
 
                   {/* Decorative rings */}
