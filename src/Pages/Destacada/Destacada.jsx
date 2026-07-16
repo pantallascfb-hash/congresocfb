@@ -23,8 +23,8 @@ const Destacada = () => {
   return (
     <div ref={sectionRef} className="py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="double-bezel !bg-transparent !border-transparent !shadow-none rounded-[2.5rem] overflow-hidden min-h-[420px] md:min-h-[500px] flex items-center justify-center">
-          <div className="double-bezel-inner !bg-transparent rounded-[calc(2.5rem-0.25rem)] overflow-hidden w-full h-full relative">
+        <div className="rounded-[2.5rem] overflow-hidden min-h-[420px] md:min-h-[500px] flex items-center justify-center border border-navy/10">
+          <div className="overflow-hidden w-full h-full relative">
             {/* Background image */}
             <div className="absolute inset-0">
               <img
