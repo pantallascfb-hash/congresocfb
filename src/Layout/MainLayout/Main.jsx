@@ -30,9 +30,12 @@ const Main = () => {
         }`}
       >
         <Link to="home" smooth={true} duration={600}>
-          <div className="w-11 h-11 rounded-full bg-navy/5 border border-navy/10 flex items-center justify-center text-navy/40 hover:text-gold hover:bg-gold/5 hover:border-gold/20 transition-all duration-500 cursor-pointer">
-            <ArrowUp size={16} strokeWidth={1.5} />
-          </div>
+          <button
+            className="w-12 h-12 rounded-full bg-navy/5 border border-navy/10 flex items-center justify-center text-navy/50 hover:text-gold hover:bg-gold/5 hover:border-gold/20 transition-all duration-500 cursor-pointer focus-ring"
+            aria-label="Volver arriba"
+          >
+            <ArrowUp size={18} strokeWidth={1.5} />
+          </button>
         </Link>
       </div>
     </div>

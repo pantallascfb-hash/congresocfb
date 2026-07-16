@@ -47,8 +47,8 @@ const Agenda = () => {
 
   return (
     <div ref={sectionRef} className="section-padding bg-surface/50">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-14 md:mb-16">
           <span className="agenda-animate opacity-0 eyebrow bg-navy/5 text-navy/50 border border-navy/8 inline-flex items-center gap-2 mb-8">
             <Clock size={14} />
             Agenda
@@ -67,7 +67,7 @@ const Agenda = () => {
               <div className="double-bezel rounded-[2rem] p-2 h-full hover:shadow-lg transition-shadow duration-500">
                 <div className="double-bezel-inner rounded-[calc(2rem-0.25rem)] overflow-hidden h-full">
                   <div
-                    className={`px-6 md:px-8 py-6 md:py-7 ${
+                    className={`px-6 md:px-8 py-6 md:py-8 ${
                       item.accent
                         ? "bg-gradient-to-br from-gold/10 via-gold/5 to-transparent"
                         : "bg-gradient-to-br from-navy/5 via-navy/2 to-transparent"

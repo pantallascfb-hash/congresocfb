@@ -23,16 +23,15 @@ const Registro = () => {
 
   return (
     <div ref={sectionRef} className="section-padding bg-surface/50">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center px-4">
         <div className="double-bezel rounded-[2.5rem] p-3">
           <div className="double-bezel-inner rounded-[calc(2.5rem-0.375rem)] p-8 md:p-16 lg:p-20 relative overflow-hidden">
-            {/* Background glow */}
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[120px]" />
               <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, rgba(200,156,61,0.4) 1px, transparent 0)", backgroundSize: "32px 32px" }} />
             </div>
 
-            <div className="relative z-10 space-y-8">
+            <div className="relative z-10 space-y-6 md:space-y-8">
               <div className="reg-animate opacity-0">
                 <span className="eyebrow bg-gold/8 text-gold-dark border border-gold/12 inline-flex items-center gap-2">
                   Registro
@@ -52,12 +51,12 @@ const Registro = () => {
                 No dejes pasar esta oportunidad de encontrarnos con el Padre.
               </p>
 
-              <div className="reg-animate opacity-0 pt-4">
+              <div className="reg-animate opacity-0 pt-2 md:pt-4">
                 <a
                   href="https://api.whatsapp.com/send?phone=50231520285&text=Hola%2C%20quiero%20asistir%20al%20Congreso%20la%20Llave%20de%20David"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary group inline-flex items-center gap-3 !px-12 !py-5 !text-lg"
+                  className="btn-primary group inline-flex items-center gap-3 !px-10 md:!px-12 !py-4 md:!py-5 !text-base md:!text-lg"
                 >
                   QUIERO ASISTIR
                   <span className="w-9 h-9 rounded-full bg-black/10 flex items-center justify-center transition-all duration-500 group-hover:translate-x-1 group-hover:scale-105">
@@ -66,7 +65,7 @@ const Registro = () => {
                 </a>
               </div>
 
-              <p className="reg-animate opacity-0 text-text-muted/40 text-xs">
+              <p className="reg-animate opacity-0 text-text-muted/50 text-xs">
                 Pronto habilitaremos el formulario de registro
               </p>
             </div>

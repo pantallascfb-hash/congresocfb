@@ -1,109 +1,31 @@
 const Destacada = () => {
   return (
-    <div style={{ padding: "2rem 0" }}>
-      <div style={{ maxWidth: "72rem", margin: "0 auto", padding: "0 1rem" }}>
-        <div
-          style={{
-            borderRadius: "2.5rem",
-            overflow: "hidden",
-            minHeight: "420px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-            background: "#0B2F6A",
-          }}
-        >
+    <div className="py-12 md:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-[2.5rem] overflow-hidden min-h-[350px] md:min-h-[480px] flex items-center justify-center relative bg-navy">
           <img
             src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800&q=80"
             alt="Rebaño de ovejas al atardecer"
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              opacity: 0.4,
-            }}
+            className="absolute inset-0 w-full h-full object-cover opacity-35"
           />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: "rgba(11, 47, 106, 0.5)",
-            }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/60 to-navy/70" />
 
-          <div
-            style={{
-              position: "relative",
-              zIndex: 10,
-              textAlign: "center",
-              padding: "6rem 2rem",
-              maxWidth: "48rem",
-            }}
-          >
-            <p
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                borderRadius: "9999px",
-                padding: "0.375rem 1rem",
-                fontSize: "0.75rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.2em",
-                fontWeight: 600,
-                background: "rgba(184, 137, 46, 0.2)",
-                color: "#D4A84A",
-                border: "1px solid rgba(184, 137, 46, 0.25)",
-                marginBottom: "2rem",
-              }}
-            >
+          <div className="relative z-10 text-center px-6 md:px-8 py-16 md:py-24 max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs uppercase tracking-[0.2em] font-semibold bg-gold/20 text-gold-light border border-gold/25 mb-6 md:mb-8">
               El rebaño del Padre
-            </p>
+            </span>
 
-            <h2
-              style={{
-                fontSize: "clamp(1.875rem, 5vw, 3rem)",
-                fontWeight: 900,
-                color: "#ffffff",
-                lineHeight: 0.95,
-                letterSpacing: "-0.02em",
-                marginBottom: "2rem",
-              }}
-            >
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-[0.95] tracking-[-0.02em] mb-6 md:mb-8">
               DOS DÍAS PARA
               <br />
-              <span
-                style={{
-                  background: "linear-gradient(to right, #D4A84A, #B8892E, #D4A84A)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
+              <span className="bg-gradient-to-r from-gold-light via-gold to-gold-light bg-clip-text text-transparent">
                 ENCONTRARNOS CON EL PADRE
               </span>
             </h2>
 
-            <div
-              style={{
-                width: "3rem",
-                height: "2px",
-                background: "linear-gradient(to right, transparent, rgba(184,137,46,0.5), transparent)",
-                margin: "0 auto 2rem",
-              }}
-            />
+            <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-6 md:mb-8" />
 
-            <p
-              style={{
-                color: "rgba(255,255,255,0.75)",
-                fontSize: "1rem",
-                maxWidth: "32rem",
-                margin: "0 auto",
-                lineHeight: 1.8,
-              }}
-            >
+            <p className="text-white/75 text-sm md:text-lg max-w-lg mx-auto leading-relaxed">
               Viernes 28 y Sábado 29 de Agosto — Un tiempo de restauración,
               alabanza y comunión con Dios.
             </p>

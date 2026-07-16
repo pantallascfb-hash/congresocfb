@@ -50,9 +50,9 @@ const Hero = () => {
   return (
     <div ref={heroRef} className="relative min-h-[100dvh] flex items-center overflow-hidden pt-20 pb-8 md:pt-0 md:pb-0">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left */}
-          <div className="lg:col-span-6 space-y-4 sm:space-y-6 md:space-y-8">
+          <div className="lg:col-span-6 space-y-5 md:space-y-7">
             <div className="hero-animate opacity-0 delay-100">
               <span className="eyebrow bg-gold/10 text-gold-dark border border-gold/15 inline-flex items-center gap-2">
                 <img src="/logo-cfb.png" alt="CFB" className="h-5 w-auto" />
@@ -77,7 +77,7 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-              <p className="text-navy/35 text-3xl md:text-5xl font-light mt-2 md:mt-3 tracking-[-0.01em]" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <p className="text-navy/40 text-3xl md:text-5xl font-light mt-2 md:mt-3 tracking-[-0.01em]" style={{ fontFamily: "'Playfair Display', serif" }}>
                 2026
               </p>
             </div>
@@ -89,10 +89,10 @@ const Hero = () => {
             </div>
 
             <div className="hero-animate opacity-0 delay-350">
-              <div className="inline-flex items-center gap-3 rounded-2xl bg-gold/8 border border-gold/12 px-5 py-3">
-                <span className="text-gold-dark text-xl md:text-2xl font-black tracking-tight">28–29 Agosto</span>
+              <div className="inline-flex items-center gap-3 sm:gap-4 rounded-2xl bg-gold/8 border border-gold/15 px-5 py-3">
+                <span className="text-gold-dark text-lg sm:text-xl md:text-2xl font-black tracking-tight">28–29 Agosto</span>
                 <span className="w-px h-6 bg-navy/10" />
-                <span className="text-text-muted text-xs md:text-sm font-medium">Viernes y Sábado</span>
+                <span className="text-text-muted text-xs sm:text-sm font-medium">Viernes y Sábado</span>
               </div>
             </div>
 
@@ -141,10 +141,9 @@ const Hero = () => {
 
           {/* Right — Key card */}
           <div className="lg:col-span-6 relative flex justify-center lg:justify-end">
-            <div className="hero-animate opacity-0 delay-300 relative w-full max-w-[280px] sm:max-w-sm md:max-w-md">
+            <div className="hero-animate opacity-0 delay-300 relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-sm lg:max-w-md">
               <div className="double-bezel rounded-[2rem] p-2">
                 <div className="double-bezel-inner rounded-[calc(2rem-0.25rem)] aspect-[4/5] relative overflow-hidden bg-cream-warm">
-                  {/* Sheep image */}
                   <div className="absolute inset-0">
                     <img
                       src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=800&q=80"
@@ -155,30 +154,26 @@ const Hero = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-cream-warm/30 via-transparent to-cream-warm/50" />
                   </div>
 
-                  {/* Decorative rings */}
                   <div className="absolute top-8 right-8 w-28 h-28 border border-gold/15 rounded-full" />
                   <div className="absolute top-12 right-12 w-20 h-20 border border-gold/8 rounded-full" />
 
-                  {/* Key */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-32 h-32 md:w-48 md:h-48 animate-float">
                       <KeyIllustration />
                     </div>
                   </div>
 
-                  {/* Bottom text */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-center">
-                    <p className="text-navy/30 text-xs tracking-[0.3em] uppercase">
+                    <p className="text-navy/40 text-xs tracking-[0.3em] uppercase">
                       El rebaño del Padre
                     </p>
-                    <p className="text-navy/15 text-[10px] tracking-widest mt-1">
+                    <p className="text-navy/20 text-[10px] tracking-widest mt-1">
                       Lucas 12:32
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating verse — hidden on mobile */}
               <div className="absolute -top-4 -right-4 double-bezel rounded-2xl px-5 py-3 hidden md:block animate-fade-in-up delay-800 opacity-0">
                 <p className="text-text-muted text-sm italic max-w-[170px] leading-relaxed" style={{ fontFamily: "'Playfair Display', serif" }}>
                   "No temas, rebaño pequeño"
