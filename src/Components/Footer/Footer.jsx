@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className="relative border-t border-navy/10 bg-navy text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 border-b border-white/5 pb-10 md:pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 border-b border-white/8 pb-10 md:pb-12">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <img src="/logo-cfb.png" alt="Iglesia CFB" className="h-10 w-auto" />
@@ -37,10 +37,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white/60 text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+            <h3 className="text-white/70 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
               Redes Sociales
             </h3>
-            <div className="flex gap-3">
+            <div className="flex gap-3 sm:gap-4">
               {socials.map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
@@ -48,9 +48,9 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-11 h-11 rounded-2xl bg-white/[0.04] border border-white/6 flex items-center justify-center text-white/35 hover:text-gold hover:bg-gold/5 hover:border-gold/15 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+                  className="w-12 h-12 sm:w-13 sm:h-13 rounded-2xl bg-white/[0.08] border border-white/12 flex items-center justify-center text-white/70 hover:text-gold hover:bg-gold/10 hover:border-gold/25 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
                 >
-                  <Icon size={16} />
+                  <Icon size={20} />
                 </a>
               ))}
             </div>
